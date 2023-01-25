@@ -32,22 +32,29 @@ function newNonPlayableCharacter(x, y) {
         // after the promise is resolved it calls the stop function to stop the movement of the NPC
         stop()
     }
-    function walkNorth() {
+//now use the same logic to make the following functions asynchronous 
+    async function walkNorth() {
         direction = 'north'
         element.src = `./assets/red-character/north.gif`
+        await sleep(2000)
+        stop()
     }
 
-    function walkWest() {
+    async function walkWest() {
         direction = 'west'
         element.src = `./assets/red-character/west.gif`
+        await sleep(2000)
+        stop()
     }
 
-    function walkSouth() {
+    async function walkSouth() {
         direction = 'south'
         element.src = `./assets/red-character/south.gif`
+        await sleep(2000)
+        stop()
     }
 
-    function stop() {
+    async function stop() {
         direction = null
         element.src = `./assets/red-character/static.gif`
     }
