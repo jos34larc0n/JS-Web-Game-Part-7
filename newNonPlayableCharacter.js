@@ -23,11 +23,21 @@ function newNonPlayableCharacter(x, y) {
 
     setInterval(moveCharacter, 1)
 
-    function walkEast() {
+    // Makes the function walkEast asynchronous using the async keyword
+    /*async function walkEast() {
         direction = 'east'
         element.src = `./assets/red-character/east.gif`
-    }
-
+        // invokes the sleep function and passed it time as an argument and uses the await keyword to pause the execution of the function 
+        await sleep(5000)
+        // after the promise is resolved it calls the stop function to stop the movement of the NPC
+        stop()
+    }*/
+    // Wrap the asynchronous logic in an async function
+(async () => {
+    // Have the NPC walk east for 2 seconds, then walk south
+    await npc.walkEast(2000);
+    npc.walkSouth();
+})();
     function walkNorth() {
         direction = 'north'
         element.src = `./assets/red-character/north.gif`
@@ -56,4 +66,12 @@ function newNonPlayableCharacter(x, y) {
         walkSouth: walkSouth,
         stop: stop
     }
+}
+
+/* add sleep function */
+
+function sleep(time){
+    return new Promise(resolve => {
+        setTimeout(resolve, time)
+    })  
 }
