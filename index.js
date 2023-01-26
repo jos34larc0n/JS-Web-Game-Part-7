@@ -13,24 +13,12 @@ const npc = newNonPlayableCharacter(50, 300)
   //  await npc.walkEast(2000)
   //  npc.walkSouth(2000)
   // }
-//moveNPC()
-//build a more complex track. Program a path for the NPC using the following directions and durations:
+//this Continues on newNonPlayableCharacter.js
 
-    /*North for 1400 ms
-    East for 1200 ms
-    South for 300 ms
-    East for 1500 ms
-    South for 1500 ms
-    West for 2700 ms
-    North for 400 ms*/
+//call the moveNPC() function
 
-npc.walkNorth(1400)                               
-npc.walkEast(1200)                              
-npc.walkSouth(300)                              
-npc.walkEast(1500)                              
-npc.walkSouth(1500)                              
-npc.walkWest(2700)                              
-npc.walkNorth(400)                                           
+moveNPC()
+
 
 
 // Create the inventory
